@@ -5,6 +5,46 @@
 *= require "_vendor/html5bp.css"
 
 //Grid
-*= require "_layout/grid"
+*= // require "_layout/grid"
 
 */
+
+header.title {
+    background: #1a1a1a;
+    color: white;
+    width: 100%;
+    heigh: 50px;
+    padding: 10px;
+    position: fixed;
+    #title {
+	color: white;
+	font: bold 30px arial, sans-serif;
+	margin: 0;
+	a {
+	    color: white;
+	    text-decoration: none;
+	}
+    }
+}
+
+#introduction {
+    background: url('/images/niutoushan.jpg') no-repeat center center scroll;
+    background-size: cover;
+    font-family: georgia, serif;
+    font-size: 300%;
+    font-style: italic;
+    font-weight: bold;
+    color: white;
+    max-width: 100%;
+
+    .first {
+	float: left;
+	margin: 15% 50% 10% 15%;
+    }
+
+    .second {
+	text-align: right;
+	float: right;
+	margin: 15% 10% 15% 15%;
+    }
+}
