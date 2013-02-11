@@ -9,13 +9,13 @@ $grid-padding   : 0;
 $break          : 12;
 
 
-#more .content {
+#about .content {
   @include container($total-columns, $break);
   //@include susy-grid-background;
 }
 
 @include at-breakpoint($break) {
-  #more .content {
+  #about .content {
     //@include susy-grid-background;
   }
 }

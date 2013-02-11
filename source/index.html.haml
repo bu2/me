@@ -1,8 +1,7 @@
 ---
-title: 'About'
 intro_first: '"Simplicity...'
 intro_second: '...is the only way."'
-more:
+about:
   - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   - Phasellus cursus nulla ac metus vestibulum porta.
   - Proin in sapien id purus elementum vehicula.
@@ -10,7 +9,8 @@ more:
   - Vestibulum gravida justo vel mi fermentum consectetur.
 ---
 
-%section#introduction
+%section#welcome
+  %a{ :name => 'welcome' }
   %div.content
     %div.row
       %div.text.first= current_page.data.intro_first
@@ -21,10 +21,10 @@ more:
   %div.background
     %img.background{ :src => '/images/niutoushan.jpg' }
 
-%section#more
-  %a{ :name => 'more' }
+%section#about
+  %a{ :name => 'about' }
   %div.content
-    - current_page.data.more.each do |item|
+    - current_page.data.about.each do |item|
       .text= item
     %a.up
       %img#up{ :src => '/images/up.png' }

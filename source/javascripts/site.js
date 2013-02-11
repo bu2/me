@@ -14,7 +14,7 @@ var bu2 = ({
     },
 
     hideContent: function() {
-	$('#introduction .content .text').hide();
+	$('#welcome .content .text').hide();
     },
 
     hideDownArrow: function() {
@@ -23,7 +23,7 @@ var bu2 = ({
 
     showPlayButton: function() {
 	var self = this;
-	$('#introduction > div.content').append('<input type="button" id="play" value="►" />');
+	$('#welcome > div.content').append('<input type="button" id="play" value="►" />');
 	$('#play').on('click', function() { self.launchAnimation(); } );
     },
 
@@ -49,13 +49,13 @@ var bu2 = ({
     },
 
     scrollToNextPage: function() {
-	$(document.body).animate( { scrollTop: $(window).height() - $(document.body).scrollTop() },
+	$('html, body').animate( { scrollTop: $(window).height() - $(document.body).scrollTop() },
 				  { duration: 1000 } 
 				);
     },
 
     scrollToTop: function() {
-	$(document.body).animate( { scrollTop: 0 },
+	$('html, body').animate( { scrollTop: 0 },
 				  { duration: 1000 } 
 				);
     },
@@ -74,7 +74,7 @@ var bu2 = ({
 
 	introContentFirst.fadeIn(1000);
 	introContentSecond.delay(1000).fadeIn(1000);
-	this.unblurBackground($('#introduction img.background'));
+	this.unblurBackground($('#welcome img.background'));
 	$('#down').delay(7000).fadeIn();
 	
     },
@@ -84,7 +84,7 @@ var bu2 = ({
 	$(document).ready( function() {
 	    self.resizeSections();
 	    $(window).resize( self.resizeSections );
-	    self.hideBackground($('#introduction img.background'));
+	    self.hideBackground($('#welcome img.background'));
 	    self.hideContent();
 	    self.hideDownArrow();
 	    self.enableAutomaticScrolling();
