@@ -9,6 +9,10 @@
 
 */
 
+body {
+    min-width: 640px;
+}
+
 header.title {
     background: #1a1a1a;
     color: white;
@@ -16,6 +20,8 @@ header.title {
     heigh: 50px;
     padding: 10px;
     position: fixed;
+    z-index: 1;
+
     #title {
 	color: white;
 	font: bold 30px arial, sans-serif;
@@ -27,9 +33,37 @@ header.title {
     }
 }
 
+footer {
+    background: #1a1a1a;
+    color: white;
+    width: 100%;
+    padding-top: 50px;
+
+    #site-map {
+	margin-left: 20%;
+	margin-right: 20%;
+    }
+}
+
+section {
+    > .content {
+	width: 100%;
+	float: left;
+    }
+    
+    > .background {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+	
+	> img.background {
+	    width: 100%;
+	}
+    }
+}
+
 #introduction {
-    background: url('/images/niutoushan.jpg') no-repeat center center scroll;
-    background-size: cover;
     font-family: georgia, serif;
     font-size: 300%;
     font-style: italic;
@@ -47,11 +81,72 @@ header.title {
 	float: right;
 	margin: 15% 10% 15% 15%;
     }
+
+    > .background {
+	background: #1a1a1a;
+
+	> img.background {
+	    filter: blur(25px);
+	    -webkit-filter: blur(25px);
+	    -moz-filter: blur(25px);
+	}
+    }
 }
 
-footer {
+#more {
+    font-family: arial, sans-serif;
+    font-size: 200%;
+    font-style: normal;
+    font-weight: normal;
+    color: grey;
+
+    > .content {
+	margin-top: 70px;
+    }
+
+    > .background {
+	backrgound: white;
+
+	> img.background {
+	    opacity: 0.10;
+	}
+    }
+}
+
+#play {
     background: #1a1a1a;
     color: white;
-    width: 100%;
-    height: 200px;
+    font: normal bold 200% arial, sans-serif;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    margin: 0;
+    border: 3px solid white;
+    padding: 0 5px 0 10px;
+    border-radius: 25%;
+}
+
+img#down  {
+    position: absolute;
+    left: 90%;
+    top: 85%;
+    width: 50px;
+    height: 50px;
+}
+
+a.down:hover {
+    cursor: pointer;
+}
+
+img#up  {
+    position: absolute;
+    left: 90%;
+    top: 115%;
+    width: 50px;
+    height: 50px;
+    opacity: 0.50;
+}
+
+a.up:hover {
+    cursor: pointer;
 }

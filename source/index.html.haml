@@ -2,12 +2,31 @@
 title: 'About'
 intro_first: '"Simplicity...'
 intro_second: '...is the only way."'
+more:
+  - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  - Phasellus cursus nulla ac metus vestibulum porta.
+  - Proin in sapien id purus elementum vehicula.
+  - Nulla feugiat purus eu nulla dapibus tempus.
+  - Vestibulum gravida justo vel mi fermentum consectetur.
 ---
 
 %section#introduction
-  %div.row
-    %div.text.first= current_page.data.intro_first
-  %div.row
-    %div.text.second= current_page.data.intro_second
+  %div.content
+    %div.row
+      %div.text.first= current_page.data.intro_first
+    %div.row
+      %div.text.second= current_page.data.intro_second
+    %a.down
+      %img#down{ :src => '/images/down.png' }
+  %div.background
+    %img.background{ :src => '/images/niutoushan.jpg' }
 
-%section.more
+%section#more
+  %a{ :name => 'more' }
+  %div.content
+    - current_page.data.more.each do |item|
+      .text= item
+    %a.up
+      %img#up{ :src => '/images/up.png' }
+  %div.background
+    %img.background{ :src => '/images/shanghai.jpg' }
