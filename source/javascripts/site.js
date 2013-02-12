@@ -18,7 +18,7 @@ var bu2 = ({
     },
 
     hideDownArrow: function() {
-	$('#down').hide();
+	$('.down.to_about').hide();
     },
 
     showPlayButton: function() {
@@ -49,7 +49,7 @@ var bu2 = ({
     },
 
     scrollToNextPage: function() {
-	$('html, body').animate( { scrollTop: $(window).height() - $(document.body).scrollTop() },
+	$('html, body').animate( { scrollTop: $(window).height() },
 				  { duration: 1000 } 
 				);
     },
@@ -60,10 +60,17 @@ var bu2 = ({
 				);
     },
 
+    scrollToBottom: function() {
+	$('html, body').animate( { scrollTop: $(document.body).height() - $(window).height()},
+				   { duration: 1000 }
+				 );
+    },
+
     enableAutomaticScrolling: function() {
-	var self = this
-	$('#down').on('click', function() { self.scrollToNextPage(); } );
-	$('#up').on('click', function() { self.scrollToTop(); } );
+	var self = this;
+	$('a.down.to_about').on('click', function() { self.scrollToNextPage(); } );
+	$('a.up').on('click', function() { self.scrollToTop(); } );
+	$('a.down.to_more').on('click', function() { self.scrollToBottom(); } );
     },
 
     launchAnimation: function() {
@@ -75,7 +82,7 @@ var bu2 = ({
 	introContentFirst.fadeIn(1000);
 	introContentSecond.delay(1000).fadeIn(1000);
 	this.unblurBackground($('#welcome img.background'));
-	$('#down').delay(7000).fadeIn();
+	$('.down.to_about').delay(7000).fadeIn();
 	
     },
 

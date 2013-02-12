@@ -140,27 +140,46 @@ section {
     border-radius: 25%;
 }
 
-img#down  {
-    position: absolute;
-    left: 90%;
-    top: 85%;
-    width: 100px;
-    height: 100px;
+a.down.to_about {
+    &:hover {
+	cursor: pointer;
+    }
+
+    img.down  {
+	position: absolute;
+	left: 90%;
+	top: 85%;
+	width: 64px;
+	height: 64px;
+    }
 }
 
-a.down:hover {
-    cursor: pointer;
+a.up {
+    &:hover {
+	cursor: pointer;
+    }
+
+    img.up  {
+	position: absolute;
+	left: 90%;
+	top: 110%;
+	width: 64px;
+	height: 64px;
+	opacity: 0.50;
+    }
 }
 
-img#up  {
-    position: absolute;
-    left: 90%;
-    top: 110%;
-    width: 100px;
-    height: 100px;
-    opacity: 0.50;
-}
+a.down.to_more {
+    &:hover {
+	cursor: pointer;
+    }
 
-a.up:hover {
-    cursor: pointer;
+    img.down  {
+	position: absolute;
+	left: 90%;
+	top: 185%;
+	width: 64px;
+	height: 64px;
+	opacity: 0.50;
+    }
 }

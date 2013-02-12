@@ -16,8 +16,8 @@ about:
       %div.text.first= current_page.data.intro_first
     %div.row
       %div.text.second= current_page.data.intro_second
-    %a.down
-      %img#down{ :src => '/images/down.png' }
+    %a.down.to_about
+      %img.down{ :src => '/images/down_white.png' }
   %div.background
     %img.background{ :src => '/images/niutoushan.jpg' }
 
@@ -27,6 +27,9 @@ about:
     - current_page.data.about.each do |item|
       .text= item
     %a.up
-      %img#up{ :src => '/images/up.png' }
+      %img.up{ :src => '/images/up_black.png' }
+    %a.down.to_more
+      %img.down{ :src => '/images/down_black.png' }
+      
   %div.background
     %img.background{ :src => '/images/shanghai.jpg' }
