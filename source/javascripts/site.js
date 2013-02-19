@@ -3,9 +3,24 @@ var bu2 = ({
     resizeSections: function() {
 	var windowWidth = $(window).width();
 	var windowHeight = $(window).height();
+	
 	$('section').width(windowWidth);
 	$('section').height(windowHeight);
-	$('img.background').height(windowHeight);
+
+	// cropping of Welcome background
+	var welcomeBackgroundWidth = 3264;
+	var welcomeBackgroundHeight = 2448;
+	var welcomeBackgroundRatio = welcomeBackgroundWidth / welcomeBackgroundHeight;	
+	var is = windowHeight;
+	var should = windowWidth / welcomeBackgroundRatio;
+	var diff = is - should;
+	$('section#welcome img.background').css('margin-top', diff / 2);
+
+	// positionning of About background
+	var aboutBackgroundWidth = 1728;
+	var aboutBackgroundHeight = 842;
+	var is = $('section#about img.background').height();
+	$('section#about img.background').css('margin-top', windowHeight - is);
     },
 
     hideBackground: function(img) {
@@ -35,7 +50,7 @@ var bu2 = ({
 	var value = 25;
 	img.css('visible', '');
 	img.css('display', '');
-	img.delay(2000).animate( { 'opacity': 0.5 },
+	img.delay(3000).animate( { 'opacity': 0.5 },
 				 { duration: 1000 }
 			       ).animate( { 'opacity': 1 },
 					  { duration: 5000 ,
@@ -78,11 +93,13 @@ var bu2 = ({
 	this.hidePlayButton();
 	var introContentFirst = $('.content .text.first');
 	var introContentSecond = $('.content .text.second');
+	var introContentThird = $('.content .text.third');
 
 	introContentFirst.fadeIn(1000);
 	introContentSecond.delay(1000).fadeIn(1000);
+	introContentThird.delay(2000).fadeIn(1000);
 	this.unblurBackground($('#welcome img.background'));
-	$('.down.to_about').delay(7000).fadeIn();
+	$('.down.to_about').delay(8000).fadeIn();
 	
     },
 

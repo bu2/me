@@ -1,6 +1,7 @@
 ---
-intro_first: '"Simplicity...'
-intro_second: '...is the only way."'
+intro_first: '&ldquo;Migrating...'
+intro_second: '...toward simplicity.&rdquo;'
+intro_third: '实<br/>事<br/>求<br/>是'
 about:
   - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   - Phasellus cursus nulla ac metus vestibulum porta.
@@ -16,6 +17,8 @@ about:
       %div.text.first= current_page.data.intro_first
     %div.row
       %div.text.second= current_page.data.intro_second
+    %div.row
+      %div.text.third= current_page.data.intro_third
     %a.down.to_about
       %img.down{ :src => '/images/down_white.png' }
   %div.background
